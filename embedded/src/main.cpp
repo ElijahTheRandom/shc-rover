@@ -10,13 +10,19 @@ void setup() {
 
   // Configure serial transport
   Serial.begin(115200);
-  delay(2000);
+  delay(100);
 
   // Turn LED off after serial initialization
   digitalWrite(LED_PIN, LOW);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  Serial.write(Serial.read());
+  if (Serial.available()) {
+    String command = Serial.readStringUntil('\n');
+    command.trim();
+
+    if (command == "led_on") {
+      digitalWrite(LED_PIN, HIGH);
+    }
+  }
 }
