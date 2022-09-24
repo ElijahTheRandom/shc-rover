@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "embedded",
+			"path": "embedded"
+		},
+		{
+			"path": "ros_ws"
+		},
+		{
+			"path": "web"
+		}
+	],
+	"settings": {}
+}
