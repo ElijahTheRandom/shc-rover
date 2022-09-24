@@ -23,6 +23,8 @@ void loop() {
 
     if (command == "led_on") {
       digitalWrite(LED_PIN, HIGH);
+    } else if (command == "led_off") {
+      digitalWrite(LED_PIN, LOW);
     }
   }
 }
