@@ -25,6 +25,8 @@ void loop() {
       digitalWrite(LED_PIN, HIGH);
     } else if (command == "led_off") {
       digitalWrite(LED_PIN, LOW);
+    } else if (command == "ping") {
+      Serial.println("pong");
     }
   }
 }
