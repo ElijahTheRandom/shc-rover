@@ -5,12 +5,15 @@
 			"path": "embedded"
 		},
 		{
+			"name": "ros_ws",
 			"path": "ros_ws"
 		},
 		{
+			"name": "web",
 			"path": "web"
 		},
 		{
+			"name": "two-month-rover",
 			"path": "."
 		}
 	],
