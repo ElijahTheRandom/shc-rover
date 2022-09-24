@@ -27,6 +27,8 @@ void loop() {
       digitalWrite(LED_PIN, LOW);
     } else if (command == "ping") {
       Serial.println("pong");
+    } else if (command == "time") {
+      Serial.println(millis());
     }
   }
 }
