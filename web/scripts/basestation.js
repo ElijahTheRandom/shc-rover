@@ -52,18 +52,21 @@ function setup() {
         });
         command_pub.publish(command);
     });
+
     $("#btn_led_off").click(() => {
         var command = new ROSLIB.Message({
             data:"led_off"
         });
         command_pub.publish(command);
     });
+
     $("#btn_ping").click(() => {
         var command = new ROSLIB.Message({
             data:"ping"
         });
         command_pub.publish(command);
     });
+    
     $("#btn_time").click(() => {
         var command = new ROSLIB.Message({
             data:"time"
