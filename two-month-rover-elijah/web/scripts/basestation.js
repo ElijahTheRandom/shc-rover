@@ -115,6 +115,24 @@ function setup() {
         });
         command_pub.publish(command);
     });
+
+    document.onkeydown = function(e) {
+        var key_press = e.key;
+        var command = new ROSLIB.Message({
+            data:key_press
+        });
+        command_pub.publish(command); 
+        pico_log.text(e.key);
+      }
+    document.onkeyup = function(e) {
+        var key_press = e.key;
+        var command = new ROSLIB.Message({
+            data:"Brake"
+        });
+        command_pub.publish(command);
+        pico_log.text(e.key);
+      }
+
 }
 
 function update_log(message) {
