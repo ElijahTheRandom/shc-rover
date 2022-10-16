@@ -10,8 +10,11 @@ var command_pub;
 // Text box reference
 var pico_log;
 
+var movement_log;
+
 function setup() {
     pico_log = $("#pico_log");
+    movement_log = $("#movement_log");
 
     ros = new ROSLIB.Ros();
     var rosbridge_status = $("#rosbridge_status");
@@ -74,47 +77,6 @@ function setup() {
         command_pub.publish(command);
     });
 
-    $("#btn_forward").click(() => {
-        var command = new ROSLIB.Message({
-            data:"forward"
-        });
-        command_pub.publish(command);
-    });
-
-    $("#btn_left").click(() => {
-        var command = new ROSLIB.Message({
-            data:"left"
-        });
-        command_pub.publish(command);
-    });
-
-    $("#btn_right").click(() => {
-        var command = new ROSLIB.Message({
-            data:"right"
-        });
-        command_pub.publish(command);
-    });
-
-    $("#btn_backawrd").click(() => {
-        var command = new ROSLIB.Message({
-            data:"backward"
-        });
-        command_pub.publish(command);
-    });
-
-    $("#btn_armup").click(() => {
-        var command = new ROSLIB.Message({
-            data:"armup"
-        });
-        command_pub.publish(command);
-    });
-
-    $("#btn_armdown").click(() => {
-        var command = new ROSLIB.Message({
-            data:"armdown"
-        });
-        command_pub.publish(command);
-    });
 
     document.onkeydown = function(e) {
         var key_press = e.key;
@@ -122,7 +84,7 @@ function setup() {
             data:key_press
         });
         command_pub.publish(command); 
-        pico_log.text(e.key);
+        movement_log.text(e.key);
       }
     document.onkeyup = function(e) {
         var key_press = e.key;
@@ -130,7 +92,7 @@ function setup() {
             data:"Brake"
         });
         command_pub.publish(command);
-        pico_log.text(e.key);
+        movement_log.text(e.key);
       }
 
 }
@@ -146,5 +108,33 @@ function connect_rosbridge() {
 
     ros.connect(address);
 }
+
+const video = document.getElementById("webcam")
+
+async function getMedia() {
+  let stream = null
+
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ 
+        video: true 
+
+    })
+    video.srcObject = stream
+  } catch (err) {
+    console.log("error")
+  }
+}
+
+/* navigator.mediaDevices.enumerateDevices()
+.then((devices) => {
+  devices.forEach((device) => {
+    console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
+  });
+})
+.catch((err) => {
+  console.error(`${err.name}: ${err.message}`);
+});
+ */
+getMedia()
 
 window.onload = setup;

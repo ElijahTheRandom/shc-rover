@@ -80,14 +80,18 @@ void loop() {
       Serial.println("pong");
     } else if (command == "time") {
       Serial.println(millis());
-    } else if (command == "ArrowUp"){
+    } else if (command == "ArrowUp" || command == "w"){
       moveforward();
-    } else if (command == "ArrowLeft"){
+    } else if (command == "ArrowLeft" || command == "a"){
       moveleft();
-    } else if (command == "ArrowRight"){
+    } else if (command == "ArrowRight" || command == "d"){
       moveright();
-    } else if (command == "ArrowDown"){
+    } else if (command == "ArrowDown" || command == "s"){
       movebackward();
+    } else if (command == "," || command == "o"){
+      //raise arm
+    } else if (command == "." || command == "l"){
+      //lower arm
     } else if (command == "Brake"){
       brake();
     }

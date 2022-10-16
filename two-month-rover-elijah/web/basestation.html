@@ -4,7 +4,7 @@
 
     <script src="./js/jquery-3.6.1.min.js"></script>
     <script src="./js/roslib.js"></script>
-    <script src="./scripts/basestation.js"></script>
+    <script defer src="./scripts/basestation.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -38,35 +38,7 @@
                     <h5 class="card-title text-center">
                         Control
                     </h5>
-                    <div>
-                        <button type="button" class="btn btn-primary" id="btn_forward" style="width:100%;margin-bottom: 10px;background-color: green;">
-                            Forward
-                        </button>
-                        <button type="button" class="btn btn-danger" id="btn_left" style="width:49.5%;display:inline-block;margin-bottom: 10px;background-color: blueviolet;">
-                            Left
-                        </button>
-                        <button type="button" class="btn btn-danger" id="btn_right" style="width:49.5%;display:inline-block;margin-bottom: 10px;background-color: blueviolet;">
-                            Right
-                        </button>
-                        <button type="button" class="btn btn-info" id="btn_backward" style="width:100%;background-color: red;">
-                            Backwards
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title text-center">
-                        Arm Control
-                    </h5>
-                    <div>
-                        <button type="button" class="btn btn-primary" id="btn_armup" style="width:100%;margin-bottom: 10px;background-color: green;">
-                            Up
-                        </button>
-                        <button type="button" class="btn btn-danger" id="btn_armdown" style="width:100%;margin-bottom: 10px;background-color: green;">
-                            Down
-                        </button>
-                    </div>
+                    <textarea class="form-control" name="movement_text_area" id="movement_log" style="height: 40px;" wrap="hard" readonly></textarea>
                 </div>
             </div>
             <div class="card mt-3">
@@ -104,7 +76,7 @@
                     </h5>
                     <form action="">
                         <div class="form-group">
-                            <textarea class="form-control" name="camera" id="camera" style="height: 435px;" wrap="hard" readonly></textarea>
+                            <video width="500px" height="500px" id="webcam" autoplay></video>
                         </div>
                     </form>
                 </div>
