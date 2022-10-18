@@ -1,6 +1,11 @@
 #include <Arduino.h>
 
-int const LED_PIN = 25, left_driver_pwn1 = 26, left_driver_pwn2 = 27, right_driver_pwn1 = 24, right_driver_pwn2 = 25;
+#define LED_PIN 25
+#define left_driver_pwn1 26
+#define left_driver_pwn2 27
+#define right_driver_pwn1 24
+#define right_driver_pwn2 25
+#define servo 23
 
 void setup() {
   // Initialize outputs
@@ -9,6 +14,7 @@ void setup() {
   pinMode(left_driver_pwn2, OUTPUT);
   pinMode(right_driver_pwn1, OUTPUT);
   pinMode(right_driver_pwn2, OUTPUT);
+  pinMode(servo, OUTPUT);
 
 
   // Turn LED on for initialization
@@ -67,6 +73,14 @@ void moveright(){
   digitalWrite(left_driver_pwn2, HIGH);
 }
 
+void armup(){
+  //arm moves up
+}
+
+void armdown(){
+  //arm moves down
+}
+
 void loop() {
   if (Serial.available()) {
     String command = Serial.readStringUntil('\n');
@@ -89,9 +103,9 @@ void loop() {
     } else if (command == "ArrowDown" || command == "s"){
       movebackward();
     } else if (command == "," || command == "o"){
-      //raise arm
+      armraise()
     } else if (command == "." || command == "l"){
-      //lower arm
+      armlower()
     } else if (command == "Brake"){
       brake();
     }

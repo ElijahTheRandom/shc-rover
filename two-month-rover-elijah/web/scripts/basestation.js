@@ -125,16 +125,128 @@ async function getMedia() {
   }
 }
 
-/* navigator.mediaDevices.enumerateDevices()
-.then((devices) => {
-  devices.forEach((device) => {
-    console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
-  });
-})
-.catch((err) => {
-  console.error(`${err.name}: ${err.message}`);
-});
- */
 getMedia()
+
+var temperature = [70,69,70,70,69,70,71,70,69,71];
+var time = [1,2,3,4,5,6,7,8,9,10];
+
+
+//ALL THE CHARTS
+
+new Chart("accelerometerChart", {
+    type: "line",
+    data: {
+      labels: time,
+      datasets: [{
+        label:"Accelerometer",
+        fill: false,
+        lineTension: 0,
+        backgroundColor: "rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: temperature
+      }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: true,
+                title:{
+                    text:"M/S^2",
+                    display:true
+                }
+            }
+        }
+    }
+  });
+
+new Chart("tempChart", {
+    type: "line",
+    data: {
+      labels: time,
+      datasets: [{
+        label:"Temperature",
+        fill: false,
+        lineTension: 0,
+        backgroundColor: "rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: temperature
+      }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: true,
+                title:{
+                    text:"Celcius",
+                    display:true
+                }
+            }
+        }
+    }
+  });
+
+new Chart("pressureChart", {
+    type: "line",
+    data: {
+      labels: time,
+      datasets: [{
+        label:"Pressure",
+        fill: false,
+        lineTension: 0,
+        backgroundColor: "rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: temperature
+      }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: true,
+                title:{
+                    text:"hPa",
+                    display:true
+                }
+            }
+        }
+    }
+  });
+
+  new Chart("altitudeChart", {
+    type: "line",
+    data: {
+      labels: time,
+      datasets: [{
+        label:"Altitude",
+        fill: false,
+        lineTension: 0,
+        backgroundColor: "rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: temperature
+      }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: true,
+                title:{
+                    text:"Meters",
+                    display:true
+                }
+            }
+        }
+    }
+  });
+  
+  function addData(chart, label, data) {
+      chart.data.labels.push(label);
+      chart.data.datasets.forEach((dataset) => {
+          dataset.data.push(data);
+      });
+      chart.update();
+  }
+$("#btn_test").click(() => {
+    var mychart = Chart.getChart("tempChart")
+    addData(mychart, 11, 72)
+});
 
 window.onload = setup;

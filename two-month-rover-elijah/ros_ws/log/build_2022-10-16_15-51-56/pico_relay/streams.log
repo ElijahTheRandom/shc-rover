@@ -1,0 +1,40 @@
+[0.750s] Invoking command in 'C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\src\pico_relay': PYTHONPATH=C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\Lib\site-packages; c:\python38\python.exe setup.py egg_info --egg-base ..\..\build\pico_relay build --build-base C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\build install --prefix C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay --record C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\install.log --single-version-externally-managed
+[1.063s] running egg_info
+[1.063s] creating ..\..\build\pico_relay\pico_relay.egg-info
+[1.079s] writing ..\..\build\pico_relay\pico_relay.egg-info\PKG-INFO
+[1.079s] writing dependency_links to ..\..\build\pico_relay\pico_relay.egg-info\dependency_links.txt
+[1.079s] writing entry points to ..\..\build\pico_relay\pico_relay.egg-info\entry_points.txt
+[1.079s] writing requirements to ..\..\build\pico_relay\pico_relay.egg-info\requires.txt
+[1.079s] writing top-level names to ..\..\build\pico_relay\pico_relay.egg-info\top_level.txt
+[1.079s] writing manifest file '..\..\build\pico_relay\pico_relay.egg-info\SOURCES.txt'
+[1.094s] reading manifest file '..\..\build\pico_relay\pico_relay.egg-info\SOURCES.txt'
+[1.094s] writing manifest file '..\..\build\pico_relay\pico_relay.egg-info\SOURCES.txt'
+[1.094s] running build
+[1.094s] running build_py
+[1.094s] creating C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\build
+[1.094s] creating C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\build\lib
+[1.094s] creating C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\build\lib\pico_relay
+[1.094s] copying pico_relay\pico_relay.py -> C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\build\lib\pico_relay
+[1.094s] copying pico_relay\__init__.py -> C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\build\lib\pico_relay
+[1.094s] running install
+[1.110s] running install_lib
+[1.110s] creating C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\Lib\site-packages\pico_relay
+[1.110s] copying C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\build\lib\pico_relay\pico_relay.py -> C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\Lib\site-packages\pico_relay
+[1.110s] copying C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\build\lib\pico_relay\__init__.py -> C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\Lib\site-packages\pico_relay
+[1.110s] byte-compiling C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\Lib\site-packages\pico_relay\pico_relay.py to pico_relay.cpython-38.pyc
+[1.110s] byte-compiling C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\Lib\site-packages\pico_relay\__init__.py to __init__.cpython-38.pyc
+[1.125s] running install_data
+[1.125s] creating C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\share\ament_index
+[1.125s] creating C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\share\ament_index\resource_index
+[1.125s] creating C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\share\ament_index\resource_index\packages
+[1.125s] copying resource\pico_relay -> C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\share\ament_index\resource_index\packages
+[1.125s] copying package.xml -> C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\share\pico_relay
+[1.125s] running install_egg_info
+[1.125s] Copying ..\..\build\pico_relay\pico_relay.egg-info to C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\Lib\site-packages\pico_relay-0.0.0-py3.8.egg-info
+[1.172s] running install_scripts
+[1.204s] Installing pico_relay-script.py script to C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\lib\pico_relay
+[1.204s] Installing pico_relay.exe script to C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\lib\pico_relay
+[1.204s] writing list of installed files to 'C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\install.log'
+[1.204s] c:\python38\lib\site-packages\setuptools\command\install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.204s]   warnings.warn(
+[1.235s] Invoked command in 'C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\src\pico_relay' returned '0': PYTHONPATH=C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay\Lib\site-packages; c:\python38\python.exe setup.py egg_info --egg-base ..\..\build\pico_relay build --build-base C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\build install --prefix C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\install\pico_relay --record C:\Users\pople\OneDrive\Documents\SHC\Two-Month\two-month-rover-elijah\ros_ws\build\pico_relay\install.log --single-version-externally-managed
