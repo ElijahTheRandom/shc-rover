@@ -70,11 +70,15 @@ function setup() {
         command_pub.publish(command);
     });
     
-    $("#btn_time").click(() => {
-        var command = new ROSLIB.Message({
-            data:"time"
-        });
-        command_pub.publish(command);
+    
+
+    $("#btn_graph").click(() => {
+        pico_log.text(thedata)
+        var thedata = Serial.readStringUntil('\n');
+        if (thedata.startsWith("acel")){
+            thedata = thedata.replace('acel','');
+            Acceleration.push(thedata);
+        }
     });
 
 
@@ -87,7 +91,6 @@ function setup() {
         movement_log.text(e.key);
       }
     document.onkeyup = function(e) {
-        var key_press = e.key;
         var command = new ROSLIB.Message({
             data:"Brake"
         });
@@ -96,6 +99,8 @@ function setup() {
       }
 
 }
+
+ 
 
 function update_log(message) {
     var log = message.data;
@@ -127,7 +132,10 @@ async function getMedia() {
 
 getMedia()
 
+
+
 var temperature = [70,69,70,70,69,70,71,70,69,71];
+var Acceleration = []
 var time = [1,2,3,4,5,6,7,8,9,10];
 
 
@@ -143,7 +151,7 @@ new Chart("accelerometerChart", {
         lineTension: 0,
         backgroundColor: "rgba(0,0,255,1.0)",
         borderColor: "rgba(0,0,255,0.1)",
-        data: temperature
+        data: Acceleration
       }]
     },
     options: {
