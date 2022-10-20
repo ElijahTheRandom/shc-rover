@@ -12,10 +12,6 @@
  *______________________________________________________________________________________________|
  */
 
-
-
-
-
 #include <Arduino.h>
 //Mtion Sensor
 #include <Adafruit_ISM330DHCX.h>
@@ -27,9 +23,6 @@
 #include <SPI.h>
 #include <Servo.h>
 
-
-
-//Demo
 #define LED_PIN 25
 #define left_driver_pwn1 26
 #define left_driver_pwn2 27
@@ -49,11 +42,6 @@ int servoposition = 0;
 #define LSM_SCK 13
 #define LSM_MISO 12
 #define LSM_MOSI 11
-
-
-
-
-
 
 
 /*
@@ -89,7 +77,7 @@ void setup() {
   // Turn LED off after serial initialization
   digitalWrite(LED_PIN, LOW);
 
-pinMode(LED_PIN, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
   pinMode(left_driver_pwn1, OUTPUT);
   pinMode(left_driver_pwn2, OUTPUT);
   pinMode(right_driver_pwn1, OUTPUT);
@@ -258,26 +246,7 @@ Serial.begin(115200);
   ism330dhcx.configInt1(false, false, true); // accelerometer DRDY on INT1
   ism330dhcx.configInt2(false, true, false); // gyro DRDY on INT2
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
 
 void moveforward(){
   //PWN1 and not PWN2 = forward
@@ -334,21 +303,11 @@ void armdown(){
   armservo.write(servoposition);
 }
 
-
-
-
-
-
-
-
-
 void loop() {
   if (Serial.available()) {
     String command = Serial.readStringUntil('\n');
     command.trim();
   
-
-
     sensors_event_t accel;
     sensors_event_t gyro;
     sensors_event_t temp;
@@ -401,8 +360,5 @@ void loop() {
     } else if (command == "Brake"){
       brake();
     }
-
-
   }
 }
-
