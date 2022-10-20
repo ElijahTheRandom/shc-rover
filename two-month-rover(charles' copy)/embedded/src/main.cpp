@@ -1,12 +1,31 @@
+/*______________________________________________________________________________________________
+ *                                                                                              |
+ *                                                                                              |
+ *                                   Important Shit Here                                        |
+ *                                                                                              |
+ *                                                                                              |
+ *                                                                                              |
+ *                                    10.4.150.9:9090                                           |
+ *                                                                                              |
+ *                                                                                              |
+ *                                                                                              |
+ *______________________________________________________________________________________________|
+ */
+
+
+
+
+
 #include <Arduino.h>
 //Mtion Sensor
 #include <Adafruit_ISM330DHCX.h>
 
 //Environment Sensor
 #include <Wire.h>
-#include <SPI.h>
 #include <Adafruit_Sensor.h>
 #include "Adafruit_BMP3XX.h"
+#include <SPI.h>
+#include <Servo.h>
 
 
 
@@ -16,7 +35,9 @@
 #define left_driver_pwn2 27
 #define right_driver_pwn1 24
 #define right_driver_pwn2 25
-#define servo 23
+Servo armservo;
+
+int servoposition = 0;
 
 
 /*
@@ -73,7 +94,7 @@ pinMode(LED_PIN, OUTPUT);
   pinMode(left_driver_pwn2, OUTPUT);
   pinMode(right_driver_pwn1, OUTPUT);
   pinMode(right_driver_pwn2, OUTPUT);
-  pinMode(servo, OUTPUT);
+  armservo.attach(21);
 
 
 /*
@@ -304,11 +325,13 @@ void moveright(){
 }
 
 void armup(){
-  //arm moves up
+  servoposition++;
+  armservo.write(servoposition);
 }
 
 void armdown(){
-  //arm moves down
+  servoposition--;
+  armservo.write(servoposition);
 }
 
 
@@ -316,10 +339,6 @@ void armdown(){
 
 
 
-int forwards1_0 = 0;
-int backwards1_0 = 0;
-int trunRight1_0 = 0;
-int turnLeft1_0 = 0;
 
 
 
@@ -327,6 +346,7 @@ void loop() {
   if (Serial.available()) {
     String command = Serial.readStringUntil('\n');
     command.trim();
+  
 
 
     sensors_event_t accel;
@@ -383,6 +403,6 @@ void loop() {
     }
 
 
-
-
+  }
 }
+
