@@ -54,6 +54,7 @@ function setup() {
             data:"led_on"
         });
         command_pub.publish(command);
+        console.log('LED on');
     });
 
     $("#btn_led_off").click(() => {
@@ -113,7 +114,7 @@ function connect_rosbridge() {
 
     ros.connect(address);
 }
-
+/*
 const video = document.getElementById("webcam")
 
 async function getMedia() {
@@ -131,7 +132,7 @@ async function getMedia() {
 }
 
 getMedia()
-
+*/
 
 
 var temperature = [70,69,70,70,69,70,71,70,69,71];

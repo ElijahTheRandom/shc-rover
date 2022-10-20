@@ -6,7 +6,8 @@
 #include <Wire.h>
 #include <SPI.h>
 #include <Adafruit_Sensor.h>
-#include "Adafruit_BMP3XX.h"
+#include <Servo.h>
+#include <Adafruit_BMP3XX.h>
 
 #define LED_PIN 25
 #define left_driver_pwn1 26
