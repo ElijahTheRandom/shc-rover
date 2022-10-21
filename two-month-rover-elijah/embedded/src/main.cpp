@@ -32,8 +32,9 @@ int servoposition = 0;
 #define SEALEVELPRESSURE_HPA (1013.25)
 
 
-
-
+// Timing Variables
+int imu_timer = 0;
+int bmp_timer = 0;
 
 
 //Environment 
@@ -152,8 +153,7 @@ void armdown(){
 void loop() {
     float x, y, z;
 
-
-  if (IMU.accelerationAvailable()) {
+  if (IMU.accelerationAvailable() && millis() - imu_timer > 1000) {
     IMU.readAcceleration(x, y, z);
 
     Serial.print(x);
@@ -161,14 +161,17 @@ void loop() {
     Serial.print(y);
     Serial.print('\t');
     Serial.println(z);
+
+    imu_timer = millis();
   }
 
-  delay(500);
 
 if (! bmp.performReading()) {
     Serial.println("Failed to perform reading :(");
     return;
   }
+
+if (millis() - bmp_timer > 1000){
   Serial.print("Temperature = ");
   Serial.print(bmp.temperature);
   Serial.println(" *C");
@@ -182,7 +185,8 @@ if (! bmp.performReading()) {
   Serial.println(" m");
 
   Serial.println();
-  delay(2000);
+  bmp_timer = millis();
+}
 
 
   if (Serial.available()) {
