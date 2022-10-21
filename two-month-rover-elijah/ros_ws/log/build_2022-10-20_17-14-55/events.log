@@ -1,0 +1,47 @@
+[0.000000] (-) TimerEvent: {}
+[0.000000] (pico_relay) JobQueued: {'identifier': 'pico_relay', 'dependencies': OrderedDict()}
+[0.000000] (pico_relay) JobStarted: {'identifier': 'pico_relay'}
+[0.110000] (-) TimerEvent: {}
+[0.219000] (-) TimerEvent: {}
+[0.328000] (-) TimerEvent: {}
+[0.438000] (-) TimerEvent: {}
+[0.547000] (-) TimerEvent: {}
+[0.657000] (-) TimerEvent: {}
+[0.766000] (-) TimerEvent: {}
+[0.875000] (-) TimerEvent: {}
+[0.985000] (-) TimerEvent: {}
+[1.094000] (-) TimerEvent: {}
+[1.219000] (-) TimerEvent: {}
+[1.313000] (pico_relay) Command: {'cmd': ['c:\\python38\\python.exe', 'setup.py', 'egg_info', '--egg-base', '..\\..\\build\\pico_relay', 'build', '--build-base', 'C:\\Users\\pople\\OneDrive\\Documents\\SHC\\Two-Month\\two-month-rover-elijah\\ros_ws\\build\\pico_relay\\build', 'install', '--prefix', 'C:\\Users\\pople\\OneDrive\\Documents\\SHC\\Two-Month\\two-month-rover-elijah\\ros_ws\\install\\pico_relay', '--record', 'C:\\Users\\pople\\OneDrive\\Documents\\SHC\\Two-Month\\two-month-rover-elijah\\ros_ws\\build\\pico_relay\\install.log', '--single-version-externally-managed'], 'cwd': 'C:\\Users\\pople\\OneDrive\\Documents\\SHC\\Two-Month\\two-month-rover-elijah\\ros_ws\\src\\pico_relay', 'env': {'ALLUSERSPROFILE': 'C:\\ProgramData', 'APPDATA': 'C:\\Users\\pople\\AppData\\Roaming', 'ChocolateyInstall': 'C:\\ProgramData\\chocolatey', 'ChocolateyLastPathUpdate': '133072517401251717', 'COLCON': '1', 'CommonProgramFiles': 'C:\\Program Files\\Common Files', 'CommonProgramFiles(x86)': 'C:\\Program Files (x86)\\Common Files', 'CommonProgramW6432': 'C:\\Program Files\\Common Files', 'COMPUTERNAME': 'ELIJAHNATOR', 'ComSpec': 'C:\\WINDOWS\\system32\\cmd.exe', 'DriverData': 'C:\\Windows\\System32\\Drivers\\DriverData', 'HOMEDRIVE': 'C:', 'HOMEPATH': '\\Users\\pople', 'LOCALAPPDATA': 'C:\\Users\\pople\\AppData\\Local', 'LOGONSERVER': '\\\\ELIJAHNATOR', 'NUMBER_OF_PROCESSORS': '8', 'OneDrive': 'C:\\Users\\pople\\OneDrive', 'OneDriveConsumer': 'C:\\Users\\pople\\OneDrive', 'OnlineServices': 'Online Services', 'OpenCV_DIR': 'C:\\opencv', 'OPENSSL_CONF': 'C:\\Program Files\\OpenSSL-Win64\\bin\\openssl.cfg', 'OS': 'Windows_NT', 'Path': 'C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.2.8-hotspot\\bin;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\ProgramData\\chocolatey\\lib\\cunit\\lib;C:\\ProgramData\\chocolatey\\lib\\tinyxml2\\lib;C:\\ProgramData\\chocolatey\\lib\\bullet\\lib;C:\\Program Files\\Graphviz\\bin;C:\\Program Files\\Cppcheck;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\CMake\\bin;C:\\Program Files\\Git\\bin;C:\\Users\\pople\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\pople\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\pople\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\pople\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\msys64\\mingw64\\bin;C:\\Users\\pople\\.dotnet\\tools;C:\\Program Files\\OpenSSL-Win64\\bin\\;C:\\Users\\pople\\OneDrive\\Documents\\libxml2-2.7.8.win32\\bin;', 'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW', 'platformcode': 'KV', 'PROCESSOR_ARCHITECTURE': 'AMD64', 'PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 140 Stepping 2, GenuineIntel', 'PROCESSOR_LEVEL': '6', 'PROCESSOR_REVISION': '8c02', 'ProgramData': 'C:\\ProgramData', 'ProgramFiles': 'C:\\Program Files', 'ProgramFiles(x86)': 'C:\\Program Files (x86)', 'ProgramW6432': 'C:\\Program Files', 'PROMPT': '$P$G', 'PSModulePath': 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules', 'PUBLIC': 'C:\\Users\\Public', 'Qt5_DIR': 'C:\\Qt\\Qt5.12.12\\5.12.12\\msvc2017_64', 'QT_QPA_PLATFORM_PLUGIN_PATH': 'C:\\Qt\\Qt5.12.12\\5.12.12\\msvc2017_64\\plugins\\platforms', 'RegionCode': 'NA', 'SESSIONNAME': 'Console', 'SystemDrive': 'C:', 'SystemRoot': 'C:\\WINDOWS', 'TEMP': 'C:\\Users\\pople\\AppData\\Local\\Temp', 'TMP': 'C:\\Users\\pople\\AppData\\Local\\Temp', 'USERDOMAIN': 'ELIJAHNATOR', 'USERDOMAIN_ROAMINGPROFILE': 'ELIJAHNATOR', 'USERNAME': 'pople', 'USERPROFILE': 'C:\\Users\\pople', 'VBOX_MSI_INSTALL_PATH': 'C:\\Program Files\\Oracle\\VirtualBox\\', 'windir': 'C:\\WINDOWS', 'ZES_ENABLE_SYSMAN': '1', 'PYTHONPATH': 'C:\\Users\\pople\\OneDrive\\Documents\\SHC\\Two-Month\\two-month-rover-elijah\\ros_ws\\install\\pico_relay\\Lib\\site-packages;'}, 'shell': False}
+[1.328000] (-) TimerEvent: {}
+[1.438000] (-) TimerEvent: {}
+[1.547000] (-) TimerEvent: {}
+[1.657000] (-) TimerEvent: {}
+[1.766000] (-) TimerEvent: {}
+[1.875000] (-) TimerEvent: {}
+[1.907000] (pico_relay) StdoutLine: {'line': b'running egg_info\r\n'}
+[1.907000] (pico_relay) StdoutLine: {'line': b'writing ..\\..\\build\\pico_relay\\pico_relay.egg-info\\PKG-INFO\r\n'}
+[1.907000] (pico_relay) StdoutLine: {'line': b'writing dependency_links to ..\\..\\build\\pico_relay\\pico_relay.egg-info\\dependency_links.txt\r\n'}
+[1.907000] (pico_relay) StdoutLine: {'line': b'writing entry points to ..\\..\\build\\pico_relay\\pico_relay.egg-info\\entry_points.txt\r\n'}
+[1.907000] (pico_relay) StdoutLine: {'line': b'writing requirements to ..\\..\\build\\pico_relay\\pico_relay.egg-info\\requires.txt\r\n'}
+[1.907000] (pico_relay) StdoutLine: {'line': b'writing top-level names to ..\\..\\build\\pico_relay\\pico_relay.egg-info\\top_level.txt\r\n'}
+[1.907000] (pico_relay) StdoutLine: {'line': b"reading manifest file '..\\..\\build\\pico_relay\\pico_relay.egg-info\\SOURCES.txt'\r\n"}
+[1.922000] (pico_relay) StdoutLine: {'line': b"writing manifest file '..\\..\\build\\pico_relay\\pico_relay.egg-info\\SOURCES.txt'\r\n"}
+[1.922000] (pico_relay) StdoutLine: {'line': b'running build\r\n'}
+[1.922000] (pico_relay) StdoutLine: {'line': b'running build_py\r\n'}
+[1.922000] (pico_relay) StdoutLine: {'line': b'running install\r\n'}
+[1.922000] (pico_relay) StdoutLine: {'line': b'running install_lib\r\n'}
+[1.922000] (pico_relay) StdoutLine: {'line': b'running install_data\r\n'}
+[1.922000] (pico_relay) StdoutLine: {'line': b'running install_egg_info\r\n'}
+[1.938000] (pico_relay) StdoutLine: {'line': b"removing 'C:\\Users\\pople\\OneDrive\\Documents\\SHC\\Two-Month\\two-month-rover-elijah\\ros_ws\\install\\pico_relay\\Lib\\site-packages\\pico_relay-0.0.0-py3.8.egg-info' (and everything under it)\r\n"}
+[1.938000] (pico_relay) StdoutLine: {'line': b'Copying ..\\..\\build\\pico_relay\\pico_relay.egg-info to C:\\Users\\pople\\OneDrive\\Documents\\SHC\\Two-Month\\two-month-rover-elijah\\ros_ws\\install\\pico_relay\\Lib\\site-packages\\pico_relay-0.0.0-py3.8.egg-info\r\n'}
+[1.938000] (pico_relay) StdoutLine: {'line': b'running install_scripts\r\n'}
+[1.969000] (pico_relay) StdoutLine: {'line': b'Installing pico_relay-script.py script to C:\\Users\\pople\\OneDrive\\Documents\\SHC\\Two-Month\\two-month-rover-elijah\\ros_ws\\install\\pico_relay\\lib\\pico_relay\r\n'}
+[1.969000] (pico_relay) StdoutLine: {'line': b'Installing pico_relay.exe script to C:\\Users\\pople\\OneDrive\\Documents\\SHC\\Two-Month\\two-month-rover-elijah\\ros_ws\\install\\pico_relay\\lib\\pico_relay\r\n'}
+[1.969000] (pico_relay) StdoutLine: {'line': b"writing list of installed files to 'C:\\Users\\pople\\OneDrive\\Documents\\SHC\\Two-Month\\two-month-rover-elijah\\ros_ws\\build\\pico_relay\\install.log'\r\n"}
+[1.969000] (pico_relay) StderrLine: {'line': b'c:\\python38\\lib\\site-packages\\setuptools\\command\\install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\r\n'}
+[1.969000] (pico_relay) StderrLine: {'line': b'  warnings.warn(\r\n'}
+[1.985000] (-) TimerEvent: {}
+[2.000000] (pico_relay) CommandEnded: {'returncode': 0}
+[2.063000] (pico_relay) JobEnded: {'identifier': 'pico_relay', 'rc': 0}
+[2.063000] (-) EventReactorShutdown: {}
