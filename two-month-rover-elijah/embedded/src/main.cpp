@@ -13,8 +13,8 @@
 #define LED_PIN 25
 #define left_driver_pwn1 26
 #define left_driver_pwn2 27
-#define right_driver_pwn1 24
-#define right_driver_pwn2 25
+#define right_driver_pwn1 1
+#define right_driver_pwn2 1
 Servo armservo;
 
 int servoposition = 0;
@@ -62,7 +62,7 @@ void setup() {
   // Turn LED off after serial initialization
   digitalWrite(LED_PIN, LOW);
   Serial.begin(115200);
-  
+  /*
   while (!Serial);
   Serial.println("Adafruit BMP388 / BMP390 test");
 
@@ -92,16 +92,17 @@ void setup() {
   Serial.println(" Hz");
   Serial.println();
   Serial.println("Acceleration in g's");
-  Serial.println("X\tY\tZ");
+  Serial.println("X\tY\tZ");*/
 }
 
 void moveforward(){
   //PWN1 and not PWN2 = forward
   //PWN2 and not PWN1 = backwards
+  Serial.println("MOTOR FORWARD");
   digitalWrite(left_driver_pwn1, HIGH);
   digitalWrite(left_driver_pwn2, LOW);
-  digitalWrite(right_driver_pwn1, HIGH);
-  digitalWrite(right_driver_pwn2, LOW);
+  //digitalWrite(right_driver_pwn1, HIGH);
+  //digitalWrite(right_driver_pwn2, LOW);
 }
 
 void movebackward(){
@@ -151,20 +152,23 @@ void armdown(){
 }
 
 void loop() {
+  /*
     float x, y, z;
 
-  if (IMU.accelerationAvailable() && millis() - imu_timer > 1000) {
+    float acldata = 0.0;
+
+    int tempdata = bmp.temperature;
+    long presdata = bmp.pressure / 100.0;
+    int altdata = bmp.readAltitude(SEALEVELPRESSURE_HPA);
+
+  if (IMU.accelerationAvailable() && millis() - imu_timer > 250) {
     IMU.readAcceleration(x, y, z);
-
-    Serial.print(x);
-    Serial.print('\t');
-    Serial.print(y);
-    Serial.print('\t');
-    Serial.println(z);
-
+    acldata = x*100;
+    Serial.print("acel");
+    Serial.print(acldata);
+    Serial.println();
     imu_timer = millis();
   }
-
 
 if (! bmp.performReading()) {
     Serial.println("Failed to perform reading :(");
@@ -172,22 +176,19 @@ if (! bmp.performReading()) {
   }
 
 if (millis() - bmp_timer > 1000){
-  Serial.print("Temperature = ");
-  Serial.print(bmp.temperature);
-  Serial.println(" *C");
-
-  Serial.print("Pressure = ");
-  Serial.print(bmp.pressure / 100.0);
-  Serial.println(" hPa");
-
-  Serial.print("Approx. Altitude = ");
-  Serial.print(bmp.readAltitude(SEALEVELPRESSURE_HPA));
-  Serial.println(" m");
-
+  Serial.print("temp");
+  Serial.print(tempdata);
   Serial.println();
+  Serial.print("pres");
+  Serial.print(presdata);
+  Serial.println();
+  Serial.print("alti");
+  Serial.print(altdata);
+  Serial.println();
+
   bmp_timer = millis();
 }
-
+*/
 
   if (Serial.available()) {
     String command = Serial.readStringUntil('\n');
@@ -215,7 +216,8 @@ if (millis() - bmp_timer > 1000){
     } else if (command == "." || command == "l"){
       armdown();
     } else if (command == "Brake"){
-      brake();
+      //brake();
+      Serial.println("break");
     }
   }
 }
