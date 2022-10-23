@@ -140,6 +140,7 @@ var alltemperature = [20];
 var allacceleration = [0];
 var allpressure = [990];
 var allaltitude = [160];
+var overalldata = []
 
 
 //ALL THE CHARTS
@@ -348,7 +349,42 @@ $("#btn_graph").click(() => {
     redoData(altichart, time4, altitude);
 });
 
+function saveStaticDataToFile() {
+    var blob = new Blob([overalldata],
+        { type: "text/plain;charset=utf-8" });
+    saveAs(blob, "data.txt");
+}
+
+function organizedata(acctime,gentime,acce,alti,pres,temp){
+    var temporary = []
+    for (let i = 0; i <= acctime.length; i++){
+        temporary.push("Acceleration," + acctime[i].toString() + "," + acce[i].toString())
+        overalldata.push(temporary)
+        temporary = []
+    }
+    for (let i = 0; i <= gentime.length; i++){
+        temporary.push("Altitude," + gentime[i].toString() + "," + alti[i].toString())
+        overalldata.push(temporary)
+        temporary = []
+        temporary.push("Pressure," + gentime[i].toString() + "," + pres[i].toString())
+        overalldata.push(temporary)
+        temporary = []
+        temporary.push("Temperature," + gentime[i].toString() + "," + temp[i].toString())
+        overalldata.push(temporary)
+        temporary = []
+    }
+}
+
 $("#btn_graph_all").click(() => {
+    console.log(ovrltimeacl)
+    console.log(ovrltime)
+    console.log(allacceleration)
+    console.log(allaltitude)
+    console.log(allpressure)
+    console.log(alltemperature)
+    organizedata(ovrltimeacl, ovrltime, allacceleration, allaltitude, allpressure, alltemperature)
+    saveStaticDataToFile()
+
     var accelchart = Chart.getChart("accelerometerChart");
     chartAllData(accelchart, ovrltimeacl, allacceleration);
     var tempchart = Chart.getChart("tempChart");

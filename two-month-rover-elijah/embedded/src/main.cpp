@@ -11,8 +11,8 @@
 #include <Adafruit_BMP3XX.h>
 
 #define LED_PIN 25
-#define left_driver_pwn1 18
-#define left_driver_pwn2 19
+#define left_driver_pwn1 19
+#define left_driver_pwn2 18
 #define right_driver_pwn1 20
 #define right_driver_pwn2 21
 Servo armservo;
@@ -49,7 +49,7 @@ void setup() {
   pinMode(left_driver_pwn2, OUTPUT);
   pinMode(right_driver_pwn1, OUTPUT);
   pinMode(right_driver_pwn2, OUTPUT);
-  armservo.attach(21);
+  armservo.attach(22);
   delay(5000);
 
   // Turn LED on for initialization
