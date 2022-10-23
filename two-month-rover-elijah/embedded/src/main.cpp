@@ -13,8 +13,8 @@
 #define LED_PIN 25
 #define left_driver_pwn1 18
 #define left_driver_pwn2 19
-#define right_driver_pwn1 1
-#define right_driver_pwn2 1
+#define right_driver_pwn1 20
+#define right_driver_pwn2 21
 Servo armservo;
 
 int servoposition = 0;
