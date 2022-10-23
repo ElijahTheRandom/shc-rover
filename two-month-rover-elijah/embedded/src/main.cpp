@@ -11,8 +11,8 @@
 #include <Adafruit_BMP3XX.h>
 
 #define LED_PIN 25
-#define left_driver_pwn1 26
-#define left_driver_pwn2 27
+#define left_driver_pwn1 18
+#define left_driver_pwn2 19
 #define right_driver_pwn1 1
 #define right_driver_pwn2 1
 Servo armservo;
@@ -50,7 +50,7 @@ void setup() {
   pinMode(right_driver_pwn1, OUTPUT);
   pinMode(right_driver_pwn2, OUTPUT);
   armservo.attach(21);
-
+  delay(5000);
 
   // Turn LED on for initialization
   digitalWrite(LED_PIN, HIGH);
@@ -62,7 +62,7 @@ void setup() {
   // Turn LED off after serial initialization
   digitalWrite(LED_PIN, LOW);
   Serial.begin(115200);
-  /*
+  
   while (!Serial);
   Serial.println("Adafruit BMP388 / BMP390 test");
 
@@ -92,7 +92,7 @@ void setup() {
   Serial.println(" Hz");
   Serial.println();
   Serial.println("Acceleration in g's");
-  Serial.println("X\tY\tZ");*/
+  Serial.println("X\tY\tZ");
 }
 
 void moveforward(){
@@ -101,8 +101,8 @@ void moveforward(){
   Serial.println("MOTOR FORWARD");
   digitalWrite(left_driver_pwn1, HIGH);
   digitalWrite(left_driver_pwn2, LOW);
-  //digitalWrite(right_driver_pwn1, HIGH);
-  //digitalWrite(right_driver_pwn2, LOW);
+  digitalWrite(right_driver_pwn1, HIGH);
+  digitalWrite(right_driver_pwn2, LOW);
 }
 
 void movebackward(){
@@ -137,22 +137,33 @@ void moveright(){
   //PWN2 and not PWN1 = backwards
   digitalWrite(left_driver_pwn1, HIGH);
   digitalWrite(left_driver_pwn2, LOW);
-  digitalWrite(left_driver_pwn1, LOW);
-  digitalWrite(left_driver_pwn2, HIGH);
+  digitalWrite(right_driver_pwn1, LOW);
+  digitalWrite(right_driver_pwn2, HIGH);
 }
 
 void armup(){
-  servoposition = servoposition + 1;
+  if (servoposition == 180){
+    Serial.println("MAX UP");
+  }
+  else {
+  servoposition = servoposition + 5;
   armservo.write(servoposition);
+  delay(10);
+  }
 }
 
 void armdown(){
-  servoposition = servoposition - 1;
+  if (servoposition == 0){
+    Serial.println("MAX DOWN");
+  }
+  else{
+  servoposition = servoposition - 5;
   armservo.write(servoposition);
+  delay(10);
+  }
 }
 
 void loop() {
-  /*
     float x, y, z;
 
     float acldata = 0.0;
@@ -188,7 +199,7 @@ if (millis() - bmp_timer > 1000){
 
   bmp_timer = millis();
 }
-*/
+
 
   if (Serial.available()) {
     String command = Serial.readStringUntil('\n');
@@ -216,8 +227,7 @@ if (millis() - bmp_timer > 1000){
     } else if (command == "." || command == "l"){
       armdown();
     } else if (command == "Brake"){
-      //brake();
-      Serial.println("break");
+      brake();
     }
   }
 }

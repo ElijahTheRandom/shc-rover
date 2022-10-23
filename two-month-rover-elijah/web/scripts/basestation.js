@@ -274,6 +274,14 @@ new Chart("pressureChart", {
     chart.update();
   }
 
+  function chartAllData(chart, label, data) {
+    chart.data.labels = label;
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data = data;
+    });
+    chart.update();
+  }
+
   function updateGraph(message){
     var thedata = message.data;
     if (thedata.startsWith("acel")){
@@ -338,6 +346,17 @@ $("#btn_graph").click(() => {
     redoData(presschart, time3, pressure);
     var altichart = Chart.getChart("altitudeChart");
     redoData(altichart, time4, altitude);
+});
+
+$("#btn_graph_all").click(() => {
+    var accelchart = Chart.getChart("accelerometerChart");
+    chartAllData(accelchart, ovrltimeacl, allacceleration);
+    var tempchart = Chart.getChart("tempChart");
+    chartAllData(tempchart, ovrltime, alltemperature);
+    var presschart = Chart.getChart("pressureChart");
+    chartAllData(presschart, ovrltime, allpressure);
+    var altichart = Chart.getChart("altitudeChart");
+    chartAllData(altichart, ovrltime, allaltitude);
 });
 
 
