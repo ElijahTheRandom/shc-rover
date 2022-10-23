@@ -82,7 +82,9 @@ class SerialRelay(Node):
     def list_serial_ports():
         # This code only works on linux systems
         # See here for other OSes: https://stackoverflow.com/a/14224477
-        return glob.glob("/dev/tty[A-Za-z]*")
+        #return glob.glob("/dev/tty[A-Za-z]*")
+        return ['COM%s' % (i + 1) for i in range(256)]
+
         
 
 def main(args=None):

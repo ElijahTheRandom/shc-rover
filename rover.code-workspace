@@ -11,10 +11,6 @@
 		{
 			"name": "web",
 			"path": "web"
-		},
-		{
-			"name": "two-month-rover",
-			"path": "."
 		}
 	],
 	"settings": {}

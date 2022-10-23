@@ -4,34 +4,56 @@
 
     <script src="./js/jquery-3.6.1.min.js"></script>
     <script src="./js/roslib.js"></script>
-    <script src="./scripts/basestation.js"></script>
+    <script defer src="./scripts/basestation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
-
 <body>
     <div class="row p-3">
         <div class="col">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title text-center">
-                        Example Triggers
+                        Basic Triggers
                     </h5>
-                    <div class="d-grid gap-2">
-                        <button type="button" class="btn btn-primary" id="btn_led_on">
+                    <div>
+                        <button type="button" class="btn btn-primary" id="btn_led_on" style="width:49.5%;margin-bottom: 10px;">
                             Led On
                         </button>
-                        <button type="button" class="btn btn-danger" id="btn_led_off">
+                        <button type="button" class="btn btn-primary" id="btn_led_off" style="width:49.5%;margin-bottom: 10px;">
                             Led Off
                         </button>
-                        <button type="button" class="btn btn-warning" id="btn_ping">
+                        <button type="button" class="btn btn-primary" id="btn_ping" style="width:49.5%;margin-bottom: 10px;">
                             Ping
                         </button>
-                        <button type="button" class="btn btn-info" id="btn_time">
-                            Time
-                        </button>
                     </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        Control
+                    </h5>
+                    <textarea class="form-control" name="movement_text_area" id="movement_log" style="height: 40px;" wrap="hard" readonly></textarea>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        Sensor Data
+                    </h5>
+                    <canvas id="accelerometerChart" style="width:100%;max-width:700px"></canvas>
+                    <canvas id="tempChart" style="width:100%;max-width:700px"></canvas>
+                    <canvas id="pressureChart" style="width:100%;max-width:700px"></canvas>
+                    <canvas id="altitudeChart" style="width:100%;max-width:700px"></canvas>
+                    <button type="button" class="btn btn-primary" id="btn_graph">
+                        Clean Chart
+                    </button>
+                    <button type="button" class="btn btn-primary" id="btn_graph_all" style="margin-left: 450px;">
+                        Chart All Data
+                    </button>
                 </div>
             </div>
             <div class="card mt-3">
@@ -45,7 +67,7 @@
                                 <label>
                                     ROSBridge Server Address
                                 </label>
-                                <input type="text" class="form-control" id="rosbridge_address" value="localhost:9090">
+                                <input type="text" class="form-control" id="rosbridge_address" value="10.4.150.9:9090">
                             </div>
                             <div class="form-group">
                                 <label>
@@ -62,6 +84,18 @@
             </div>
         </div>
         <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        Camera Output
+                    </h5>
+                    <form action="">
+                        <div class="form-group">
+                            <video width="500px" height="500px" id="webcam" autoplay></video>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title text-center">
