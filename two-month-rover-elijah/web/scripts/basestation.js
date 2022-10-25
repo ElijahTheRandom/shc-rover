@@ -382,8 +382,8 @@ $("#btn_graph_all").click(() => {
     console.log(allaltitude)
     console.log(allpressure)
     console.log(alltemperature)
-    organizedata(ovrltimeacl, ovrltime, allacceleration, allaltitude, allpressure, alltemperature)
-    saveStaticDataToFile()
+    //organizedata(ovrltimeacl, ovrltime, allacceleration, allaltitude, allpressure, alltemperature)
+    //saveStaticDataToFile()
 
     var accelchart = Chart.getChart("accelerometerChart");
     chartAllData(accelchart, ovrltimeacl, allacceleration);

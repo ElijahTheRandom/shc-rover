@@ -12,9 +12,9 @@
 
 #define LED_PIN 25
 #define left_driver_pwn1 19
-#define left_driver_pwn2 18
-#define right_driver_pwn1 20
-#define right_driver_pwn2 21
+#define left_driver_direction 18
+#define right_driver_pwn1 16
+#define right_driver_pwn2 17
 Servo armservo;
 
 int servoposition = 0;
@@ -46,11 +46,12 @@ void setup() {
   // Initialize outputs
   pinMode(LED_PIN, OUTPUT);
   pinMode(left_driver_pwn1, OUTPUT);
-  pinMode(left_driver_pwn2, OUTPUT);
+  pinMode(left_driver_direction, OUTPUT);
   pinMode(right_driver_pwn1, OUTPUT);
   pinMode(right_driver_pwn2, OUTPUT);
   armservo.attach(22);
   delay(5000);
+
 
   // Turn LED on for initialization
   digitalWrite(LED_PIN, HIGH);
@@ -98,9 +99,8 @@ void setup() {
 void moveforward(){
   //PWN1 and not PWN2 = forward
   //PWN2 and not PWN1 = backwards
-  Serial.println("MOTOR FORWARD");
   digitalWrite(left_driver_pwn1, HIGH);
-  digitalWrite(left_driver_pwn2, LOW);
+  digitalWrite(left_driver_direction, LOW);
   digitalWrite(right_driver_pwn1, HIGH);
   digitalWrite(right_driver_pwn2, LOW);
 }
@@ -108,8 +108,8 @@ void moveforward(){
 void movebackward(){
   //PWN1 and not PWN2 = forward
   //PWN2 and not PWN1 = backwards
-  digitalWrite(left_driver_pwn1, LOW);
-  digitalWrite(left_driver_pwn2, HIGH);
+  digitalWrite(left_driver_pwn1, HIGH);
+  digitalWrite(left_driver_direction, HIGH);
   digitalWrite(right_driver_pwn1, LOW);
   digitalWrite(right_driver_pwn2, HIGH);
 }
@@ -118,7 +118,7 @@ void brake(){
   //PWN1 and not PWN2 = forward
   //PWN2 and not PWN1 = backwards
   digitalWrite(left_driver_pwn1, LOW);
-  digitalWrite(left_driver_pwn2, LOW);
+  digitalWrite(left_driver_direction, LOW);
   digitalWrite(right_driver_pwn1, LOW);
   digitalWrite(right_driver_pwn2, LOW);
 }
@@ -126,8 +126,8 @@ void brake(){
 void moveleft(){
   //PWN1 and not PWN2 = forward
   //PWN2 and not PWN1 = backwards
-  digitalWrite(left_driver_pwn1, LOW);
-  digitalWrite(left_driver_pwn2, HIGH);
+  digitalWrite(left_driver_pwn1, HIGH);
+  digitalWrite(left_driver_direction, HIGH);
   digitalWrite(right_driver_pwn1, HIGH);
   digitalWrite(right_driver_pwn2, LOW);
 }
@@ -136,7 +136,7 @@ void moveright(){
   //PWN1 and not PWN2 = forward
   //PWN2 and not PWN1 = backwards
   digitalWrite(left_driver_pwn1, HIGH);
-  digitalWrite(left_driver_pwn2, LOW);
+  digitalWrite(left_driver_direction, LOW);
   digitalWrite(right_driver_pwn1, LOW);
   digitalWrite(right_driver_pwn2, HIGH);
 }
